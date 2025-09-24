@@ -50,7 +50,9 @@
           <a href="index.html" class="mobile-menu__link">Inicio</a>
           <a href="catalog.html" class="mobile-menu__link">Catálogo</a>
           <a href="buys.html" class="mobile-menu__link">Compras</a>
-          <a href="collection.html" class="mobile-menu__link">Nueva Colección</a>
+          <a href="collection.html" class="mobile-menu__link"
+            >Nueva Colección</a
+          >
           <a href="#" class="mobile-menu__link">Contacto</a>
           <a href="#" class="mobile-menu__link">Acerca de</a>
         </nav>
@@ -62,19 +64,29 @@
       <div class="search-container">
         <div class="search-box">
           <i class="search-icon fi fi-rs-search"></i>
-          <input type="text" class="search-input" id="search-input" placeholder="BUSCAR..." autocomplete="off">
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="BUSCAR..."
+            autocomplete="off"
+          />
           <button class="search-close" id="search-close">
             <i class="fi fi-sr-cross-small"></i>
           </button>
         </div>
-        
+
         <!-- Search Results -->
         <div class="search-results" id="search-results">
           <div class="search-tabs">
-            <button class="search-tab active" data-tab="productos">PRODUCTOS</button>
-            <button class="search-tab" data-tab="colecciones">COLECCIONES</button>
+            <button class="search-tab active" data-tab="productos">
+              PRODUCTOS
+            </button>
+            <button class="search-tab" data-tab="colecciones">
+              COLECCIONES
+            </button>
           </div>
-          
+
           <div class="search-content">
             <!-- Productos Tab -->
             <div class="search-tab-content active" id="productos-content">
@@ -82,7 +94,7 @@
                 <!-- Los productos se llenarán dinámicamente -->
               </div>
             </div>
-            
+
             <!-- Colecciones Tab -->
             <div class="search-tab-content" id="colecciones-content">
               <div class="search-collections">
@@ -94,135 +106,78 @@
       </div>
     </div>
 
-    <!-- Collection Hero Section -->
-    <section class="collection-hero">
-      <div class="collection-hero__container">
-        <div class="collection-hero__content">
-          <h1 class="collection-hero__title">NUEVA COLECCIÓN</h1>
-          <p class="collection-hero__subtitle">Descubre las últimas tendencias en moda urbana</p>
-          <div class="collection-hero__badge">
-            <span class="collection-hero__badge-text">NUEVO</span>
-          </div>
-        </div>
-        <div class="collection-hero__image">
-          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80" alt="Nueva Colección DALIX" />
-        </div>
-      </div>
-    </section>
-
     <!-- Collection Products Section -->
     <section class="collection-products">
       <div class="collection-products__container">
-        <h2 class="collection-products__title">Productos Destacados</h2>
-        
         <div class="collection-products__grid">
           <div class="collection-product-card">
             <div class="collection-product-card__image-container">
-              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80" alt="Camiseta Blanca Dóberman" class="collection-product-card__image" />
-              <div class="collection-product-card__badge">NUEVO</div>
-            </div>
-            <div class="collection-product-card__info">
-              <h3 class="collection-product-card__name">CAMISETA BLANCA DÓBERMAN</h3>
-              <p class="collection-product-card__price">$219.900,00</p>
-              <a href="catalog.html" class="collection-product-card__btn">Ver Producto</a>
-            </div>
-          </div>
-
-          <div class="collection-product-card">
-            <div class="collection-product-card__image-container">
-              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Camiseta Negra Instinto" class="collection-product-card__image" />
-              <div class="collection-product-card__badge">NUEVO</div>
-            </div>
-            <div class="collection-product-card__info">
-              <h3 class="collection-product-card__name">CAMISETA NEGRA INSTINTO</h3>
-              <p class="collection-product-card__price">$204.900,00</p>
-              <a href="catalog.html" class="collection-product-card__btn">Ver Producto</a>
-            </div>
-          </div>
-
-          <div class="collection-product-card">
-            <div class="collection-product-card__image-container">
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Jersey Negro 69" class="collection-product-card__image" />
-              <div class="collection-product-card__badge">NUEVO</div>
+              <img
+                src="public/img/RopaDalix8.jpg"
+                alt="Jersey Negro 69"
+                class="collection-product-card__image"
+              />
             </div>
             <div class="collection-product-card__info">
               <h3 class="collection-product-card__name">JERSEY NEGRO '69'</h3>
-              <p class="collection-product-card__price">$199.900,00</p>
-              <a href="catalog.html" class="collection-product-card__btn">Ver Producto</a>
+              <p class="collection-product-card__price">$199.900 COP</p>
+              <a href="catalog.html" class="collection-product-card__btn"
+                >Ver Producto</a
+              >
             </div>
           </div>
 
           <div class="collection-product-card">
             <div class="collection-product-card__image-container">
-              <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=400&q=80" alt="Camiseta Roja Vintage" class="collection-product-card__image" />
-              <div class="collection-product-card__badge">NUEVO</div>
+              <img
+                src="public/img/RopaDalix9.jpg"
+                alt="Camiseta Roja Vintage"
+                class="collection-product-card__image"
+              />
             </div>
             <div class="collection-product-card__info">
-              <h3 class="collection-product-card__name">CAMISETA ROJA VINTAGE</h3>
-              <p class="collection-product-card__price">$189.900,00</p>
-              <a href="catalog.html" class="collection-product-card__btn">Ver Producto</a>
+              <h3 class="collection-product-card__name">
+                CAMISETA ROJA VINTAGE
+              </h3>
+              <p class="collection-product-card__price">$189.900 COP</p>
+              <a href="catalog.html" class="collection-product-card__btn"
+                >Ver Producto</a
+              >
             </div>
           </div>
 
           <div class="collection-product-card">
             <div class="collection-product-card__image-container">
-              <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=400&q=80" alt="Hoodie Gris" class="collection-product-card__image" />
-              <div class="collection-product-card__badge">NUEVO</div>
+              <img
+                src="public/img/RopaDalix10.jpg"
+                alt="Hoodie Gris"
+                class="collection-product-card__image"
+              />
             </div>
             <div class="collection-product-card__info">
               <h3 class="collection-product-card__name">HOODIE GRIS URBANO</h3>
-              <p class="collection-product-card__price">$249.900,00</p>
-              <a href="catalog.html" class="collection-product-card__btn">Ver Producto</a>
+              <p class="collection-product-card__price">$249.900 COP</p>
+              <a href="catalog.html" class="collection-product-card__btn"
+                >Ver Producto</a
+              >
             </div>
           </div>
 
           <div class="collection-product-card">
             <div class="collection-product-card__image-container">
-              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=400&q=80" alt="Camisa Formal Azul" class="collection-product-card__image" />
-              <div class="collection-product-card__badge">NUEVO</div>
+              <img
+                src="public/img/RopaDalix11.jpg"
+                alt="Camisa Formal Azul"
+                class="collection-product-card__image"
+              />
             </div>
             <div class="collection-product-card__info">
               <h3 class="collection-product-card__name">CAMISA FORMAL AZUL</h3>
-              <p class="collection-product-card__price">$299.900,00</p>
-              <a href="catalog.html" class="collection-product-card__btn">Ver Producto</a>
+              <p class="collection-product-card__price">$299.900 COP</p>
+              <a href="catalog.html" class="collection-product-card__btn"
+                >Ver Producto</a
+              >
             </div>
-          </div>
-        </div>
-
-        <div class="collection-products__cta">
-          <a href="catalog.html" class="collection-products__btn">Ver Todo el Catálogo</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Collection Features Section -->
-    <section class="collection-features">
-      <div class="collection-features__container">
-        <h2 class="collection-features__title">¿Por qué elegir nuestra nueva colección?</h2>
-        
-        <div class="collection-features__grid">
-          <div class="collection-feature">
-            <div class="collection-feature__icon">
-              <i class="fi fi-sr-star"></i>
-            </div>
-            <h3 class="collection-feature__title">Calidad Premium</h3>
-            <p class="collection-feature__description">Materiales de la más alta calidad para garantizar durabilidad y comodidad.</p>
-          </div>
-
-          <div class="collection-feature">
-            <div class="collection-feature__icon">
-              <i class="fi fi-sr-palette"></i>
-            </div>
-            <h3 class="collection-feature__title">Diseño Único</h3>
-            <p class="collection-feature__description">Piezas exclusivas con diseños innovadores que reflejan tu personalidad.</p>
-          </div>
-
-          <div class="collection-feature">
-            <div class="collection-feature__icon">
-              <i class="fi fi-sr-truck"></i>
-            </div>
-            <h3 class="collection-feature__title">Envío Gratis</h3>
-            <p class="collection-feature__description">Envío gratuito a toda Colombia en compras superiores a $400.000 COP.</p>
           </div>
         </div>
       </div>

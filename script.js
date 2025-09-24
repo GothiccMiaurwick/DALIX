@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 1,
             name: "CAMISETA DALIX ORIGINAL",
-            price: "45.000",
+            price: "45.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix1.jpg",
             keywords: ["camiseta", "dalix", "original", "cam", "shirt", "basica"]
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 2,
             name: "HOODIE DALIX PREMIUM",
-            price: "85.000",
+            price: "85.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix2.jpg",
             keywords: ["hoodie", "dalix", "premium", "sudaderas", "abrigo"]
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 3,
             name: "CAMISETA DALIX VINTAGE",
-            price: "42.000",
+            price: "42.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix3.jpg",
             keywords: ["camiseta", "dalix", "vintage", "retro", "cam", "shirt"]
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 4,
             name: "SUDADERA DALIX CLÁSICA",
-            price: "65.000",
+            price: "65.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix4.jpg",
             keywords: ["sudadera", "dalix", "clasica", "abrigo", "sweater"]
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 5,
             name: "CAMISETA DALIX MINIMALISTA",
-            price: "38.000",
+            price: "38.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix5.jpg",
             keywords: ["camiseta", "dalix", "minimalista", "simple", "cam", "shirt"]
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 6,
             name: "HOODIE DALIX OVERSIZE",
-            price: "90.000",
+            price: "90.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix6.jpg",
             keywords: ["hoodie", "dalix", "oversize", "grande", "abrigo"]
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 7,
             name: "CAMISETA DALIX ESTAMPADA",
-            price: "48.000",
+            price: "48.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix7.jpg",
             keywords: ["camiseta", "dalix", "estampada", "diseño", "cam", "shirt"]
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 8,
             name: "SUDADERA DALIX DEPORTIVA",
-            price: "70.000",
+            price: "70.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix8.jpg",
             keywords: ["sudadera", "dalix", "deportiva", "sport", "ejercicio"]
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 9,
             name: "CAMISETA DALIX URBANA",
-            price: "40.000",
+            price: "40.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix9.jpg",
             keywords: ["camiseta", "dalix", "urbana", "ciudad", "cam", "shirt"]
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 10,
             name: "HOODIE DALIX LIMITED",
-            price: "95.000",
+            price: "95.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix10.jpg",
             keywords: ["hoodie", "dalix", "limited", "edicion", "exclusivo"]
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 11,
             name: "CAMISETA DALIX SIGNATURE",
-            price: "52.000",
+            price: "52.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix11.jpg",
             keywords: ["camiseta", "dalix", "signature", "firma", "cam", "shirt"]
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 12,
             name: "HOODIE DALIX ELITE",
-            price: "88.000",
+            price: "88.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix12.jpg",
             keywords: ["hoodie", "dalix", "elite", "premium", "exclusivo"]
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 13,
             name: "CAMISETA DALIX PRO",
-            price: "46.000",
+            price: "46.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix13.jpg",
             keywords: ["camiseta", "dalix", "pro", "profesional", "cam", "shirt"]
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 14,
             name: "SUDADERA DALIX SPORT",
-            price: "75.000",
+            price: "75.000 COP",
             originalPrice: null,
             image: "public/img/RopaDalix14.jpg",
             keywords: ["sudadera", "dalix", "sport", "deportiva", "ejercicio"]
