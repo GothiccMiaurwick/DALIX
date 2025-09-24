@@ -126,8 +126,72 @@ document.addEventListener('DOMContentLoaded', function() {
             originalPrice: null,
             image: "public/img/RopaDalix14.jpg",
             keywords: ["sudadera", "dalix", "sport", "deportiva", "ejercicio"]
+        },
+        // Colección PUREZA
+        {
+            id: 15,
+            name: "CAMISETA PUREZA BLANCA",
+            price: "42.000 COP",
+            originalPrice: null,
+            image: "public/img/RopaDalix1.jpg",
+            keywords: ["camiseta", "pureza", "blanca", "blanco", "minimalista", "coleccion", "pure", "cam", "shirt"]
+        },
+        {
+            id: 16,
+            name: "HOODIE PUREZA GRIS",
+            price: "78.000 COP",
+            originalPrice: null,
+            image: "public/img/RopaDalix2.jpg",
+            keywords: ["hoodie", "pureza", "gris", "gray", "minimalista", "coleccion", "pure", "abrigo"]
+        },
+        {
+            id: 17,
+            name: "CAMISETA PUREZA BEIGE",
+            price: "45.000 COP",
+            originalPrice: null,
+            image: "public/img/RopaDalix3.jpg",
+            keywords: ["camiseta", "pureza", "beige", "minimalista", "coleccion", "pure", "cam", "shirt"]
         }
     ];
+
+    // Base de datos de colecciones para búsqueda (SOLO TÍTULO)
+    function getCollectionsDatabase() {
+        // Obtener el título dinámico de la página
+        const purezaTitle = document.querySelector('.collection-pureza__title');
+        const purezaDescription = document.querySelector('.collection-pureza__description');
+        
+        const titleText = purezaTitle ? purezaTitle.textContent.trim() : "P U R E Z A";
+        const descriptionText = purezaDescription ? purezaDescription.textContent.trim() : "Diseños minimalistas y elegantes que reflejan la esencia pura del estilo DALIX";
+        
+        // SOLO usar el título para búsqueda - sin keywords adicionales
+        const titleKeywords = [];
+        
+        // Agregar el título completo como keyword
+        titleKeywords.push(titleText.toLowerCase());
+        
+        // Agregar cada carácter individual del título
+        const titleChars = titleText.toLowerCase().replace(/\s+/g, '');
+        for (let i = 0; i < titleChars.length; i++) {
+            if (titleChars[i] !== ' ') {
+                titleKeywords.push(titleChars[i]);
+            }
+        }
+        
+        // Debug: mostrar qué se está buscando
+        console.log('Título actual:', titleText);
+        console.log('Solo keywords del título:', titleKeywords);
+        
+        return [
+            {
+                id: 1,
+                name: titleText,
+                description: descriptionText,
+                image: "public/img/RopaDalix1.jpg",
+                keywords: titleKeywords, // SOLO keywords del título
+                products: [15, 16, 17]
+            }
+        ];
+    }
 
     // Function to open the menu
     function openMenu() {
@@ -179,16 +243,35 @@ document.addEventListener('DOMContentLoaded', function() {
         return results;
     }
 
-    // Function to render search results
-    function renderSearchResults(products) {
-        if (products.length === 0) {
-            searchResults.classList.remove('show');
-            searchOverlay.classList.remove('has-results');
-            return;
+    // Function to search collections
+    function searchCollections(searchTerm) {
+        const term = searchTerm.toLowerCase().trim();
+        if (term.length === 0) {
+            return [];
         }
+
+        const collectionsDatabase = getCollectionsDatabase();
+        const results = collectionsDatabase.filter(collection => {
+            return collection.keywords.some(keyword => 
+                keyword.toLowerCase().includes(term)
+            ) || collection.name.toLowerCase().includes(term);
+        });
+
+        return results;
+    }
+
+    // Function to render search results for products
+    function renderSearchResults(products) {
+        const searchProductsGrid = document.getElementById('search-products-grid');
+        if (!searchProductsGrid) return;
 
         searchProductsGrid.innerHTML = '';
         
+        if (products.length === 0) {
+            searchProductsGrid.innerHTML = '<p class="no-results">No se encontraron productos</p>';
+            return;
+        }
+
         products.forEach(product => {
             const productElement = document.createElement('a');
             productElement.href = 'catalog.html';
@@ -207,9 +290,35 @@ document.addEventListener('DOMContentLoaded', function() {
             
             searchProductsGrid.appendChild(productElement);
         });
+    }
 
-        searchResults.classList.add('show');
-        searchOverlay.classList.add('has-results');
+    // Function to render search results for collections
+    function renderCollectionResults(collections) {
+        const searchCollectionsGrid = document.querySelector('#colecciones-content .search-collections');
+        if (!searchCollectionsGrid) return;
+
+        searchCollectionsGrid.innerHTML = '';
+        
+        if (collections.length === 0) {
+            searchCollectionsGrid.innerHTML = '<p class="no-results">No se encontraron colecciones</p>';
+            return;
+        }
+
+        collections.forEach(collection => {
+            const collectionElement = document.createElement('a');
+            collectionElement.href = 'collection.html';
+            collectionElement.className = 'search-collection-item';
+            
+            collectionElement.innerHTML = `
+                <img src="${collection.image}" alt="${collection.name}" class="search-collection-image">
+                <div class="search-collection-info">
+                    <h3 class="search-collection-name">${collection.name}</h3>
+                    <p class="search-collection-description">${collection.description}</p>
+                </div>
+            `;
+            
+            searchCollectionsGrid.appendChild(collectionElement);
+        });
     }
 
     // Function to handle tab switching
@@ -313,8 +422,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const searchTerm = this.value;
             
             // Search in products database for detailed results
-            const searchResults = searchProducts(searchTerm);
-            renderSearchResults(searchResults);
+            const productResults = searchProducts(searchTerm);
+            const collectionResults = searchCollections(searchTerm);
+            
+            // Render results in their respective tabs
+            renderSearchResults(productResults);
+            renderCollectionResults(collectionResults);
+            
+            // Show results if there are any
+            if (productResults.length > 0 || collectionResults.length > 0) {
+                searchResults.classList.add('show');
+                searchOverlay.classList.add('has-results');
+            } else {
+                searchResults.classList.remove('show');
+                searchOverlay.classList.remove('has-results');
+            }
             
             // Also filter main page products
             filterProducts(searchTerm);
@@ -323,6 +445,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize search tabs
     initSearchTabs();
+
+    // Ensure logo functionality works correctly
+    const logo = document.querySelector('.header__logo');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            console.log('Logo clicked - navigating to index.html');
+            // Ensure the link works correctly
+            window.location.href = 'index.html';
+        });
+    }
 
     // Handle mouse leave from search area specifically
     if (searchOverlay) {

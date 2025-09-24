@@ -575,6 +575,67 @@ select {
   letter-spacing: 0.3px;
 }
 
+.search-collection-item {
+  border-left: 3px solid #333;
+}
+
+.search-collection-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Collection search results styles */
+.search-collections {
+  padding: 1rem;
+}
+
+.search-collection-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+  border-left: 3px solid #333;
+}
+
+.search-collection-item:hover {
+  background: #f8f8f8;
+}
+
+.search-collection-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.search-collection-info {
+  flex: 1;
+}
+
+.search-collection-name {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.search-collection-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
 .search-product-price {
   font-size: 0.9rem;
   color: #666;
@@ -1918,6 +1979,42 @@ select {
 
 
 
+/* Pureza Collection Styles */
+.collection-pureza {
+  width: 100%;
+  background: #fff;
+  padding: 4rem 0;
+}
+
+.collection-pureza__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.collection-pureza__title {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.collection-pureza__description {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.collection-pureza__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
 /* Responsive Design for Collection Page */
 @media (max-width: 768px) {
   .collection-hero__container {
@@ -1939,6 +2036,19 @@ select {
 
   .collection-product-card__image {
     height: 350px;
+  }
+
+  .collection-pureza__title {
+    font-size: 2rem;
+  }
+
+  .collection-pureza__description {
+    font-size: 1rem;
+  }
+
+  .collection-pureza__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
 }

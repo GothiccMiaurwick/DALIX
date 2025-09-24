@@ -1,7 +1,5 @@
 # DALIX - Tienda de Ropa Online
 
-![DALIX Logo](https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=200&q=80)
-
 ## 📋 Descripción
 
 DALIX es una tienda de ropa online moderna y elegante que ofrece prendas de alta calidad con diseños únicos. El sitio web presenta una experiencia de usuario fluida con navegación intuitiva, búsqueda avanzada y un diseño responsivo que se adapta perfectamente a dispositivos móviles y de escritorio.
