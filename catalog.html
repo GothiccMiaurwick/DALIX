@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CATALOGO - DALIX</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Flaticon Uicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <div class="header__content">
+        <a href="#" class="header__search" id="search-toggle">
+          <i class="header__icon fi fi-rs-search"></i>
+        </a>
+        <a href="index.html" class="header__logo">
+          <span class="header__logo-text">DALIX</span>
+        </a>
+        <a href="#" class="header__menu" id="menu-toggle">
+          <i class="header__icon fi fi-sr-menu-burger"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu__overlay" id="menu-overlay"></div>
+      <div class="mobile-menu__content">
+        <div class="mobile-menu__header">
+          <h3 class="mobile-menu__title">Menú</h3>
+          <button class="mobile-menu__close" id="menu-close">
+            <i class="fi fi-sr-cross-small"></i>
+          </button>
+        </div>
+        <nav class="mobile-menu__nav">
+          <a href="index.html" class="mobile-menu__link">Inicio</a>
+          <a href="catalog.html" class="mobile-menu__link">Catálogo</a>
+          <a href="buys.html" class="mobile-menu__link">Compras</a>
+          <a href="#" class="mobile-menu__link">Contacto</a>
+          <a href="#" class="mobile-menu__link">Acerca de</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-overlay" id="search-overlay">
+      <div class="search-container">
+        <div class="search-box">
+          <i class="search-icon fi fi-rs-search"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="BUSCAR..." autocomplete="off">
+          <button class="search-close" id="search-close">
+            <i class="fi fi-sr-cross-small"></i>
+          </button>
+        </div>
+        
+        <!-- Search Results -->
+        <div class="search-results" id="search-results">
+          <div class="search-tabs">
+            <button class="search-tab active" data-tab="productos">PRODUCTOS</button>
+            <button class="search-tab" data-tab="colecciones">COLECCIONES</button>
+          </div>
+          
+          <div class="search-content">
+            <!-- Productos Tab -->
+            <div class="search-tab-content active" id="productos-content">
+              <div class="search-products-grid" id="search-products-grid">
+                <!-- Los productos se llenarán dinámicamente -->
+              </div>
+            </div>
+            
+            <!-- Colecciones Tab -->
+            <div class="search-tab-content" id="colecciones-content">
+              <div class="search-collections">
+                <p class="no-results">No se encontraron colecciones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <section class="controls-bar">
+      <div class="controls-bar__container">
+        <div class="controls-bar__filter">
+          <div class="controls-bar__search-container">
+            <i class="controls-bar__search-icon fi fi-rs-search"></i>
+            <input type="text" class="controls-bar__search-input" id="catalog-search-input" placeholder="BUSCAR PRODUCTOS..." autocomplete="off">
+          </div>
+        </div>
+        <div class="controls-bar__views">
+          <button class="controls-bar__view-btn controls-bar__view-btn--active" data-view="grid-2" title="Vista de cuadrícula 2x2">
+            <div class="custom-icon custom-icon--grid-2">
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+            </div>
+          </button>
+          <button class="controls-bar__view-btn" data-view="grid-3" title="Vista de cuadrícula 3x3">
+            <div class="custom-icon custom-icon--grid-3">
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+              <div class="custom-icon__square"></div>
+            </div>
+          </button>
+          <button class="controls-bar__view-btn" data-view="list" title="Vista de lista">
+            <div class="custom-icon custom-icon--single">
+              <div class="custom-icon__square"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="catalog__grid">
+        <div class="catalog__card">
+          <a href="buys.html">
+            <img
+              src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80"
+              alt="Producto 1"
+              class="catalog__image"
+            />
+          </a>
+          <h2 class="catalog__name">Suéter Básico</h2>
+          <p class="catalog__price">$25.00</p>
+        </div>
+        <div class="catalog__card">
+          <a href="buys.html">
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80"
+              alt="Producto 2"
+              class="catalog__image"
+            />
+          </a>
+          <h2 class="catalog__name">T-Shirt Estampada</h2>
+          <p class="catalog__price">$18.00</p>
+        </div>
+        <div class="catalog__card">
+          <a href="buys.html">
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80"
+              alt="Producto 3"
+              class="catalog__image"
+            />
+          </a>
+          <h2 class="catalog__name">Camisa Personalizada</h2>
+          <p class="catalog__price">$30.00</p>
+        </div>
+        <div class="catalog__card">
+          <a href="buys.html">
+            <img
+              src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80"
+              alt="Hoodie Oversize"
+              class="catalog__image"
+            />
+          </a>
+          <h2 class="catalog__name">Hoodie Oversize</h2>
+          <p class="catalog__price">$35.00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <h3 class="footer__title">D A L I X</h3>
+
+      <div class="footer__socials">
+        <i class="footer__icon fi fi-brands-facebook"></i>
+        <i class="footer__icon fi fi-brands-instagram"></i>
+        <i class="footer__icon fi fi-brands-twitter-alt-circle"></i>
+        <i class="footer__icon fi fi-brands-pinterest"></i>
+      </div>
+
+      <a href="#">
+        <i class="fi fi-sr-marker"></i>
+        <p>Calle 5g#48-64 Barrio La Nevada</p>
+      </a>
+
+      <a href="#">
+        <i class="fi fi-brands-whatsapp-circle"></i>
+        <p>+57 800 000 000</p>
+      </a>
+
+      <a href="#">
+        <i class="fi fi-rr-envelope"></i>
+        <p>dalixprendas@gmail.com</p>
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Flaticon Uicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <title>COMPRA - DALIX</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="header">
+      <div class="header__content">
+        <a href="#" class="header__search" id="search-toggle">
+          <i class="header__icon fi fi-rs-search"></i>
+        </a>
+        <a href="index.html" class="header__logo">
+          <span class="header__logo-text">DALIX</span>
+        </a>
+        <a href="#" class="header__menu" id="menu-toggle">
+          <i class="header__icon fi fi-sr-menu-burger"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu__overlay" id="menu-overlay"></div>
+      <div class="mobile-menu__content">
+        <div class="mobile-menu__header">
+          <h3 class="mobile-menu__title">Menú</h3>
+          <button class="mobile-menu__close" id="menu-close">
+            <i class="fi fi-sr-cross-small"></i>
+          </button>
+        </div>
+        <nav class="mobile-menu__nav">
+          <a href="index.html" class="mobile-menu__link">Inicio</a>
+          <a href="catalog.html" class="mobile-menu__link">Catálogo</a>
+          <a href="buys.html" class="mobile-menu__link">Compras</a>
+          <a href="#" class="mobile-menu__link">Contacto</a>
+          <a href="#" class="mobile-menu__link">Acerca de</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-overlay" id="search-overlay">
+      <div class="search-container">
+        <div class="search-box">
+          <i class="search-icon fi fi-rs-search"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="BUSCAR..." autocomplete="off">
+          <button class="search-close" id="search-close">
+            <i class="fi fi-sr-cross-small"></i>
+          </button>
+        </div>
+        
+        <!-- Search Results -->
+        <div class="search-results" id="search-results">
+          <div class="search-tabs">
+            <button class="search-tab active" data-tab="productos">PRODUCTOS</button>
+            <button class="search-tab" data-tab="colecciones">COLECCIONES</button>
+          </div>
+          
+          <div class="search-content">
+            <!-- Productos Tab -->
+            <div class="search-tab-content active" id="productos-content">
+              <div class="search-products-grid" id="search-products-grid">
+                <!-- Los productos se llenarán dinámicamente -->
+              </div>
+            </div>
+            
+            <!-- Colecciones Tab -->
+            <div class="search-tab-content" id="colecciones-content">
+              <div class="search-collections">
+                <p class="no-results">No se encontraron colecciones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Purchase Section -->
+    <section class="product-purchase">
+      <div class="product-purchase__container">
+        <!-- Product Image -->
+        <div class="product-purchase__image-container">
+          <img
+            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
+            alt="Producto"
+            class="product-purchase__image"
+          />
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-purchase__info">
+          <h1 class="product-purchase__title">Suéter Premium</h1>
+          <p class="product-purchase__price">$25.00</p>
+          <p class="product-purchase__description">
+            Suéter de alta calidad, perfecto para cualquier ocasión. Material
+            suave y cómodo, disponible en múltiples tallas.
+          </p>
+
+          <!-- Size Selection -->
+          <div class="product-purchase__sizes">
+            <h3 class="product-purchase__sizes-title">Talla:</h3>
+            <div class="product-purchase__size-options">
+              <button class="product-purchase__size-btn">S</button>
+              <button
+                class="product-purchase__size-btn product-purchase__size-btn--active"
+              >
+                M
+              </button>
+              <button class="product-purchase__size-btn">L</button>
+              <button class="product-purchase__size-btn">XL</button>
+            </div>
+          </div>
+
+          <!-- Purchase Buttons -->
+          <div class="product-purchase__actions">
+            <button
+              class="product-purchase__btn product-purchase__btn--secondary"
+            >
+              <i class="fi fi-brands-whatsapp"></i>
+              Comprar por WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <h3 class="footer__title">D A L I X</h3>
+
+      <div class="footer__socials">
+        <i class="footer__icon fi fi-brands-facebook"></i>
+        <i class="footer__icon fi fi-brands-instagram"></i>
+        <i class="footer__icon fi fi-brands-twitter-alt-circle"></i>
+        <i class="footer__icon fi fi-brands-pinterest"></i>
+      </div>
+
+      <a href="#">
+        <i class="fi fi-sr-marker"></i>
+        <p>Calle 5g#48-64 Barrio La Nevada</p>
+      </a>
+
+      <a href="#">
+        <i class="fi fi-brands-whatsapp-circle"></i>
+        <p>+57 800 000 000</p>
+      </a>
+
+      <a href="#">
+        <i class="fi fi-rr-envelope"></i>
+        <p>dalixprendas@gmail.com</p>
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
