@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=
-  , initial-scale=1.0"
+      content="width=device-width, initial-scale=1.0"
     />
     <link rel="stylesheet" href="style.css" />
     <!-- Flaticon Uicons -->
@@ -99,22 +98,43 @@
     <!-- Product Purchase Section -->
     <section class="product-purchase">
       <div class="product-purchase__container">
-        <!-- Product Image -->
-        <div class="product-purchase__image-container">
+        <!-- Main Product Image -->
+        <div class="product-purchase__main-image">
           <img
-            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
-            alt="Producto"
+            src="public/img/RopaDalix1.jpg"
+            alt="Camiseta DALIX Original"
             class="product-purchase__image"
           />
+          
+          <!-- Product Gallery - Image Preview -->
+          <div class="product-gallery">
+            <div class="product-gallery__thumbnails" id="gallery-thumbnails">
+              <div class="product-gallery__item product-gallery__item--active" data-image="public/img/RopaDalix1.jpg">
+                <img src="public/img/RopaDalix1.jpg" alt="Vista 1" class="product-gallery__image">
+              </div>
+              <div class="product-gallery__item" data-image="public/img/RopaDalix2.jpg">
+                <img src="public/img/RopaDalix2.jpg" alt="Vista 2" class="product-gallery__image">
+              </div>
+              <div class="product-gallery__item" data-image="public/img/RopaDalix3.jpg">
+                <img src="public/img/RopaDalix3.jpg" alt="Vista 3" class="product-gallery__image">
+              </div>
+              <div class="product-gallery__item" data-image="public/img/RopaDalix4.jpg">
+                <img src="public/img/RopaDalix4.jpg" alt="Vista 4" class="product-gallery__image">
+              </div>
+              <div class="product-gallery__item" data-image="public/img/RopaDalix5.jpg">
+                <img src="public/img/RopaDalix5.jpg" alt="Vista 5" class="product-gallery__image">
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Product Info -->
         <div class="product-purchase__info">
-          <h1 class="product-purchase__title">Suéter Premium</h1>
-          <p class="product-purchase__price">$25.00</p>
+          <h1 class="product-purchase__title">Camiseta DALIX Original</h1>
+          <p class="product-purchase__price">$45.000</p>
           <p class="product-purchase__description">
-            Suéter de alta calidad, perfecto para cualquier ocasión. Material
-            suave y cómodo, disponible en múltiples tallas.
+            Camiseta de alta calidad con diseño exclusivo DALIX. Material
+            suave y cómodo, disponible en múltiples tallas y colores.
           </p>
 
           <!-- Size Selection -->

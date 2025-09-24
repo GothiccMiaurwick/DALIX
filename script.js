@@ -359,6 +359,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Product Gallery Functionality
+    const galleryItems = document.querySelectorAll('.product-gallery__item');
+    const mainImage = document.querySelector('.product-purchase__image');
+
+    if (galleryItems.length > 0 && mainImage) {
+        // Function to update active thumbnail
+        function updateActiveThumbnail(index) {
+            galleryItems.forEach(function(item, i) {
+                item.classList.toggle('product-gallery__item--active', i === index);
+            });
+        }
+
+        // Function to change main image
+        function changeMainImage(imageSrc) {
+            mainImage.src = imageSrc;
+        }
+
+        // Event listeners for thumbnail clicks
+        galleryItems.forEach(function(item, index) {
+            item.addEventListener('click', function() {
+                const imageSrc = item.getAttribute('data-image');
+                changeMainImage(imageSrc);
+                updateActiveThumbnail(index);
+            });
+        });
+    }
+
     // Horizontal scroll functionality for Nueva Colección
     const newCollectionGrid = document.querySelector('.new-collection__grid');
     
