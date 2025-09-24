@@ -17,43 +17,115 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsDatabase = [
         {
             id: 1,
-            name: "CAMISETA NEGRA INSTINTO",
-            price: "204.900,00",
+            name: "CAMISETA DALIX ORIGINAL",
+            price: "45.000",
             originalPrice: null,
-            image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=200&q=80",
-            keywords: ["camiseta", "negra", "instinto", "cam", "shirt", "black"]
+            image: "public/img/RopaDalix1.jpg",
+            keywords: ["camiseta", "dalix", "original", "cam", "shirt", "basica"]
         },
         {
             id: 2,
-            name: "CAMISETA BLANCA DÖBERMAN",
-            price: "219.900,00",
+            name: "HOODIE DALIX PREMIUM",
+            price: "85.000",
             originalPrice: null,
-            image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=200&q=80",
-            keywords: ["camiseta", "blanca", "doberman", "cam", "shirt", "white"]
+            image: "public/img/RopaDalix2.jpg",
+            keywords: ["hoodie", "dalix", "premium", "sudaderas", "abrigo"]
         },
         {
             id: 3,
-            name: "JERSEY NEGRO '69'",
-            price: "199.900,00",
-            originalPrice: "239.900,00",
-            image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
-            keywords: ["jersey", "negro", "69", "cam", "deportiva", "black"]
+            name: "CAMISETA DALIX VINTAGE",
+            price: "42.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix3.jpg",
+            keywords: ["camiseta", "dalix", "vintage", "retro", "cam", "shirt"]
         },
         {
             id: 4,
-            name: "CAMISETA ROJA VINTAGE",
-            price: "189.900,00",
+            name: "SUDADERA DALIX CLÁSICA",
+            price: "65.000",
             originalPrice: null,
-            image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=200&q=80",
-            keywords: ["camiseta", "roja", "vintage", "cam", "shirt", "red", "retro"]
+            image: "public/img/RopaDalix4.jpg",
+            keywords: ["sudadera", "dalix", "clasica", "abrigo", "sweater"]
         },
         {
             id: 5,
-            name: "CAMISA FORMAL AZUL",
-            price: "299.900,00",
+            name: "CAMISETA DALIX MINIMALISTA",
+            price: "38.000",
             originalPrice: null,
-            image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=200&q=80",
-            keywords: ["camisa", "formal", "azul", "cam", "elegante", "blue", "dress"]
+            image: "public/img/RopaDalix5.jpg",
+            keywords: ["camiseta", "dalix", "minimalista", "simple", "cam", "shirt"]
+        },
+        {
+            id: 6,
+            name: "HOODIE DALIX OVERSIZE",
+            price: "90.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix6.jpg",
+            keywords: ["hoodie", "dalix", "oversize", "grande", "abrigo"]
+        },
+        {
+            id: 7,
+            name: "CAMISETA DALIX ESTAMPADA",
+            price: "48.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix7.jpg",
+            keywords: ["camiseta", "dalix", "estampada", "diseño", "cam", "shirt"]
+        },
+        {
+            id: 8,
+            name: "SUDADERA DALIX DEPORTIVA",
+            price: "70.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix8.jpg",
+            keywords: ["sudadera", "dalix", "deportiva", "sport", "ejercicio"]
+        },
+        {
+            id: 9,
+            name: "CAMISETA DALIX URBANA",
+            price: "40.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix9.jpg",
+            keywords: ["camiseta", "dalix", "urbana", "ciudad", "cam", "shirt"]
+        },
+        {
+            id: 10,
+            name: "HOODIE DALIX LIMITED",
+            price: "95.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix10.jpg",
+            keywords: ["hoodie", "dalix", "limited", "edicion", "exclusivo"]
+        },
+        {
+            id: 11,
+            name: "CAMISETA DALIX SIGNATURE",
+            price: "52.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix11.jpg",
+            keywords: ["camiseta", "dalix", "signature", "firma", "cam", "shirt"]
+        },
+        {
+            id: 12,
+            name: "HOODIE DALIX ELITE",
+            price: "88.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix12.jpg",
+            keywords: ["hoodie", "dalix", "elite", "premium", "exclusivo"]
+        },
+        {
+            id: 13,
+            name: "CAMISETA DALIX PRO",
+            price: "46.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix13.jpg",
+            keywords: ["camiseta", "dalix", "pro", "profesional", "cam", "shirt"]
+        },
+        {
+            id: 14,
+            name: "SUDADERA DALIX SPORT",
+            price: "75.000",
+            originalPrice: null,
+            image: "public/img/RopaDalix14.jpg",
+            keywords: ["sudadera", "dalix", "sport", "deportiva", "ejercicio"]
         }
     ];
 
@@ -232,6 +304,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Real-time search filtering
     if (searchInput) {
+        // Auto uppercase functionality
+        searchInput.addEventListener('input', function(e) {
+            e.target.value = e.target.value.toUpperCase();
+        });
+
         searchInput.addEventListener('input', function() {
             const searchTerm = this.value;
             
