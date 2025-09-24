@@ -50,7 +50,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   position: relative;
 }
 
@@ -58,8 +58,8 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 12%;
   text-decoration: none;
   background: transparent;
@@ -88,7 +88,7 @@ select {
 
 .header__logo-text {
   color: #333;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 1px;
   transition: color 0.2s;
@@ -103,7 +103,7 @@ select {
 }
 
 .header__icon {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #444;
 }
 
@@ -111,8 +111,8 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 12%;
   text-decoration: none;
   background: transparent;
@@ -243,21 +243,21 @@ select {
   }
   
   .header__content {
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.5rem;
   }
   
   .header__logo-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   
   .header__search,
   .header__menu {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
   
   .header__icon {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -267,11 +267,11 @@ select {
   }
   
   .header__content {
-    padding: 0.8rem 1rem;
+    padding: 0.6rem 1rem;
   }
   
   .header__logo-text {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 
