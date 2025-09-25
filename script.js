@@ -13,146 +13,120 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchResults = document.getElementById('search-results');
     const searchProductsGrid = document.getElementById('search-products-grid');
 
-    // Base de datos de productos para búsqueda
-    const productsDatabase = [
-        {
-            id: 1,
-            name: "CAMISETA DALIX ORIGINAL",
-            price: "45.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix1.jpg",
-            keywords: ["camiseta", "dalix", "original", "cam", "shirt", "basica"]
-        },
-        {
-            id: 2,
-            name: "HOODIE DALIX PREMIUM",
-            price: "85.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix2.jpg",
-            keywords: ["hoodie", "dalix", "premium", "sudaderas", "abrigo"]
-        },
-        {
-            id: 3,
-            name: "CAMISETA DALIX VINTAGE",
-            price: "42.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix3.jpg",
-            keywords: ["camiseta", "dalix", "vintage", "retro", "cam", "shirt"]
-        },
-        {
-            id: 4,
-            name: "SUDADERA DALIX CLÁSICA",
-            price: "65.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix4.jpg",
-            keywords: ["sudadera", "dalix", "clasica", "abrigo", "sweater"]
-        },
-        {
-            id: 5,
-            name: "CAMISETA DALIX MINIMALISTA",
-            price: "38.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix5.jpg",
-            keywords: ["camiseta", "dalix", "minimalista", "simple", "cam", "shirt"]
-        },
-        {
-            id: 6,
-            name: "HOODIE DALIX OVERSIZE",
-            price: "90.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix6.jpg",
-            keywords: ["hoodie", "dalix", "oversize", "grande", "abrigo"]
-        },
-        {
-            id: 7,
-            name: "CAMISETA DALIX ESTAMPADA",
-            price: "48.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix7.jpg",
-            keywords: ["camiseta", "dalix", "estampada", "diseño", "cam", "shirt"]
-        },
-        {
-            id: 8,
-            name: "SUDADERA DALIX DEPORTIVA",
-            price: "70.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix8.jpg",
-            keywords: ["sudadera", "dalix", "deportiva", "sport", "ejercicio"]
-        },
-        {
-            id: 9,
-            name: "CAMISETA DALIX URBANA",
-            price: "40.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix9.jpg",
-            keywords: ["camiseta", "dalix", "urbana", "ciudad", "cam", "shirt"]
-        },
-        {
-            id: 10,
-            name: "HOODIE DALIX LIMITED",
-            price: "95.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix10.jpg",
-            keywords: ["hoodie", "dalix", "limited", "edicion", "exclusivo"]
-        },
-        {
-            id: 11,
-            name: "CAMISETA DALIX SIGNATURE",
-            price: "52.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix11.jpg",
-            keywords: ["camiseta", "dalix", "signature", "firma", "cam", "shirt"]
-        },
-        {
-            id: 12,
-            name: "HOODIE DALIX ELITE",
-            price: "88.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix12.jpg",
-            keywords: ["hoodie", "dalix", "elite", "premium", "exclusivo"]
-        },
-        {
-            id: 13,
-            name: "CAMISETA DALIX PRO",
-            price: "46.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix13.jpg",
-            keywords: ["camiseta", "dalix", "pro", "profesional", "cam", "shirt"]
-        },
-        {
-            id: 14,
-            name: "SUDADERA DALIX SPORT",
-            price: "75.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix14.jpg",
-            keywords: ["sudadera", "dalix", "sport", "deportiva", "ejercicio"]
-        },
-        // Colección PUREZA
-        {
-            id: 15,
-            name: "CAMISETA PUREZA BLANCA",
-            price: "42.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix1.jpg",
-            keywords: ["camiseta", "pureza", "blanca", "blanco", "minimalista", "coleccion", "pure", "cam", "shirt"]
-        },
-        {
-            id: 16,
-            name: "HOODIE PUREZA GRIS",
-            price: "78.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix2.jpg",
-            keywords: ["hoodie", "pureza", "gris", "gray", "minimalista", "coleccion", "pure", "abrigo"]
-        },
-        {
-            id: 17,
-            name: "CAMISETA PUREZA BEIGE",
-            price: "45.000 COP",
-            originalPrice: null,
-            image: "public/img/RopaDalix3.jpg",
-            keywords: ["camiseta", "pureza", "beige", "minimalista", "coleccion", "pure", "cam", "shirt"]
+    // Función para detectar imágenes disponibles automáticamente
+    function detectAvailableImages() {
+        // Lista de imágenes que sabemos que existen
+        // En un entorno real, esto se haría con una llamada al servidor
+        const knownImages = [
+            "RopaDalix1.jpg", "RopaDalix2.jpg", "RopaDalix3.jpg", "RopaDalix4.jpg", "RopaDalix5.jpg",
+            "RopaDalix6.jpg", "RopaDalix7.jpg", "RopaDalix8.jpg", "RopaDalix9.jpg", "RopaDalix10.jpg",
+            "RopaDalix11.jpg", "RopaDalix12.jpg", "RopaDalix13.jpg", "RopaDalix14.jpg", "RopaDalix15.jpg",
+            "RopaDalix16.jpg", "RopaDalix17.jpg", "RopaDalix18.jpg", "RopaDalix19.jpg", "RopaDalix20.jpg"
+        ];
+
+        // Verificar qué imágenes realmente existen (simulado)
+        // En un entorno real, esto verificaría con el servidor
+        const availableImages = knownImages.filter(imageName => {
+            // Simular verificación de existencia
+            // En producción, esto haría una petición HEAD al servidor
+            return true; // Por ahora, asumimos que todas existen
+        });
+
+        console.log(`Detectadas ${availableImages.length} imágenes disponibles:`, availableImages);
+        return availableImages;
+    }
+
+    // Función para agregar nuevas imágenes fácilmente
+    function addNewImage(imageName) {
+        const knownImages = [
+            "RopaDalix1.jpg", "RopaDalix2.jpg", "RopaDalix3.jpg", "RopaDalix4.jpg", "RopaDalix5.jpg",
+            "RopaDalix6.jpg", "RopaDalix7.jpg", "RopaDalix8.jpg", "RopaDalix9.jpg", "RopaDalix10.jpg",
+            "RopaDalix11.jpg", "RopaDalix12.jpg", "RopaDalix13.jpg", "RopaDalix14.jpg", "RopaDalix15.jpg",
+            "RopaDalix16.jpg", "RopaDalix17.jpg", "RopaDalix18.jpg", "RopaDalix19.jpg", "RopaDalix20.jpg"
+        ];
+        
+        // Agregar nueva imagen si no existe
+        if (!knownImages.includes(imageName)) {
+            knownImages.push(imageName);
+            console.log(`Nueva imagen agregada: ${imageName}`);
+            // Regenerar productos con la nueva imagen
+            regenerateProductsAndCatalog();
         }
-    ];
+    }
+
+    // Función para regenerar productos y catálogo
+    function regenerateProductsAndCatalog() {
+        // Regenerar base de datos de productos
+        window.productsDatabase = generateDynamicProductsDatabase();
+        
+        // Regenerar HTML del catálogo
+        regenerateCatalogHTML();
+        
+        console.log('Catálogo regenerado automáticamente');
+    }
+
+    // Sistema dinámico de productos basado en imágenes disponibles
+    function generateDynamicProductsDatabase() {
+        // Detectar imágenes disponibles automáticamente
+        const availableImages = detectAvailableImages();
+
+        const productTypes = [
+            { base: "CAMISETA DALIX", keywords: ["camiseta", "dalix", "cam", "shirt"] },
+            { base: "HOODIE DALIX", keywords: ["hoodie", "dalix", "abrigo", "sudaderas"] },
+            { base: "SUDADERA DALIX", keywords: ["sudadera", "dalix", "abrigo", "sweater"] },
+            { base: "JERSEY DALIX", keywords: ["jersey", "dalix", "deportivo", "sport"] },
+            { base: "CAMISA DALIX", keywords: ["camisa", "dalix", "formal", "elegante"] }
+        ];
+
+        const productStyles = [
+            { suffix: "ORIGINAL", price: 45000, keywords: ["original", "basica", "clasica"] },
+            { suffix: "PREMIUM", price: 85000, keywords: ["premium", "calidad", "exclusivo"] },
+            { suffix: "VINTAGE", price: 42000, keywords: ["vintage", "retro", "clasico"] },
+            { suffix: "CLÁSICA", price: 65000, keywords: ["clasica", "tradicional", "basica"] },
+            { suffix: "MINIMALISTA", price: 38000, keywords: ["minimalista", "simple", "clean"] },
+            { suffix: "OVERSIZE", price: 90000, keywords: ["oversize", "grande", "comodo"] },
+            { suffix: "ESTAMPADA", price: 48000, keywords: ["estampada", "diseño", "grafico"] },
+            { suffix: "DEPORTIVA", price: 70000, keywords: ["deportiva", "sport", "ejercicio"] },
+            { suffix: "URBANA", price: 40000, keywords: ["urbana", "ciudad", "moderna"] },
+            { suffix: "LIMITED", price: 95000, keywords: ["limited", "edicion", "exclusivo"] },
+            { suffix: "SIGNATURE", price: 52000, keywords: ["signature", "firma", "personalizado"] },
+            { suffix: "ELITE", price: 88000, keywords: ["elite", "premium", "exclusivo"] },
+            { suffix: "PRO", price: 46000, keywords: ["pro", "profesional", "trabajo"] },
+            { suffix: "SPORT", price: 75000, keywords: ["sport", "deportiva", "ejercicio"] },
+            { suffix: "COLLECTION", price: 60000, keywords: ["collection", "coleccion", "serie"] }
+        ];
+
+        const products = [];
+
+        availableImages.forEach((imageName, index) => {
+            const imageNumber = parseInt(imageName.match(/\d+/)[0]);
+            const productType = productTypes[index % productTypes.length];
+            const productStyle = productStyles[index % productStyles.length];
+            
+            const productName = `${productType.base} ${productStyle.suffix}`;
+            const allKeywords = [...productType.keywords, ...productStyle.keywords, "dalix"];
+            
+            // Agregar variaciones de precio (±20%)
+            const basePrice = productStyle.price;
+            const priceVariation = Math.floor(basePrice * (0.8 + Math.random() * 0.4));
+            const finalPrice = Math.round(priceVariation / 1000) * 1000; // Redondear a miles
+
+            products.push({
+                id: index + 1,
+                name: productName,
+                price: `${finalPrice.toLocaleString('es-CO')} COP`,
+                originalPrice: null,
+                image: `public/img/${imageName}`,
+                keywords: allKeywords
+            });
+        });
+
+        console.log(`Generados ${products.length} productos dinámicamente basados en ${availableImages.length} imágenes`);
+        return products;
+    }
+
+    // Generar la base de datos de productos dinámicamente
+    const productsDatabase = generateDynamicProductsDatabase();
 
     // Base de datos de colecciones para búsqueda (SOLO TÍTULO)
     function getCollectionsDatabase() {
@@ -271,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
             searchProductsGrid.innerHTML = '<p class="no-results">No se encontraron productos</p>';
             return;
         }
-
+        
         products.forEach(product => {
             const productElement = document.createElement('a');
             productElement.href = 'catalog.html';
@@ -454,6 +428,43 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ensure the link works correctly
             window.location.href = 'index.html';
         });
+    }
+
+    // Función para regenerar dinámicamente el catálogo HTML
+    function regenerateCatalogHTML() {
+        const catalogGrid = document.querySelector('.catalog__grid');
+        if (!catalogGrid) return;
+
+        // Limpiar el grid existente
+        catalogGrid.innerHTML = '';
+
+        // Generar tarjetas de productos dinámicamente
+        productsDatabase.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'catalog__card';
+            productCard.setAttribute('data-category', 'productos');
+            
+            productCard.innerHTML = `
+                <a href="buys.html">
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        class="catalog__image"
+                    />
+                </a>
+                <h2 class="catalog__name">${product.name}</h2>
+                <p class="catalog__price">$${product.price}</p>
+            `;
+            
+            catalogGrid.appendChild(productCard);
+        });
+
+        console.log(`Regenerado catálogo HTML con ${productsDatabase.length} productos`);
+    }
+
+    // Regenerar el catálogo cuando se carga la página
+    if (document.querySelector('.catalog__grid')) {
+        regenerateCatalogHTML();
     }
 
     // Handle mouse leave from search area specifically
