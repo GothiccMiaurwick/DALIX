@@ -762,9 +762,36 @@ document.addEventListener('DOMContentLoaded', function() {
         // Load saved view preference
         const savedView = localStorage.getItem('catalogView') || 'grid-2';
         const savedButton = document.querySelector(`[data-view="${savedView}"]`);
-        if (savedButton) {
+        
+        // Check if we're on mobile and grid-3 is hidden
+        const isMobile = window.innerWidth <= 480;
+        const grid3Button = document.querySelector(`[data-view="grid-3"]`);
+        const isGrid3Hidden = grid3Button && window.getComputedStyle(grid3Button).display === 'none';
+        
+        if (savedButton && !(isMobile && savedView === 'grid-3' && isGrid3Hidden)) {
             savedButton.click();
+        } else if (isMobile && savedView === 'grid-3' && isGrid3Hidden) {
+            // If grid-3 is selected but hidden on mobile, default to grid-2
+            const grid2Button = document.querySelector(`[data-view="grid-2"]`);
+            if (grid2Button) {
+                grid2Button.click();
+            }
         }
+        
+        // Handle window resize to manage grid-3 visibility
+        window.addEventListener('resize', () => {
+            const isMobileNow = window.innerWidth <= 480;
+            const grid3Button = document.querySelector(`[data-view="grid-3"]`);
+            const currentView = localStorage.getItem('catalogView') || 'grid-2';
+            
+            if (isMobileNow && currentView === 'grid-3') {
+                // Switch to grid-2 if currently on grid-3 and switching to mobile
+                const grid2Button = document.querySelector(`[data-view="grid-2"]`);
+                if (grid2Button) {
+                    grid2Button.click();
+                }
+            }
+        });
     }
 
     // Catalog Search Functionality
