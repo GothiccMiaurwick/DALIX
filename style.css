@@ -640,6 +640,11 @@ select {
   font-size: 0.9rem;
   color: #666;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.search-product-price:hover {
+  color: #32493a;
 }
 
 .search-product-price .current-price {
@@ -796,6 +801,11 @@ select {
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.product-purchase__price:hover {
+  color: #32493a;
 }
 
 .product-purchase__description {
@@ -828,9 +838,9 @@ select {
 .product-purchase__size-btn {
   width: 50px;
   height: 50px;
-  border: 2px solid #c0c0c0;
+  border: 2px solid #32493a;
   background: #f8f8f8;
-  color: #666;
+  color: #32493a;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
@@ -839,20 +849,59 @@ select {
 }
 
 .product-purchase__size-btn:hover {
-  border-color: #888;
-  background: #e0e0e0;
+  border-color: #32493a;
+  background: #f8f8f8;
 }
 
 .product-purchase__size-btn--active {
-  border-color: #444;
-  background: #444;
-  color: #fff;
+  border-color: #32493a;
+  background: #f8f8f8;
+  color: #32493a;
 }
 
-.product-purchase__quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.product-purchase__size-chart {
+  margin: 2rem 0;
+}
+
+.product-purchase__size-chart table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #32493a;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-purchase__size-chart caption {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #32493a;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.product-purchase__size-chart th {
+  background: #32493a;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 8px;
+  text-align: center;
+  border: 1px solid #32493a;
+}
+
+.product-purchase__size-chart td {
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.product-purchase__size-chart tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.product-purchase__size-chart tr:hover {
+  background: #e8f5e8;
 }
 
 .product-purchase__quantity-btn {
@@ -1219,6 +1268,11 @@ select {
   font-weight: 400;
   margin: 0;
   text-align: center;
+  transition: color 0.3s ease;
+}
+
+.new-collection__price:hover {
+  color: #32493a;
 }
 
 /* Responsive Design */
@@ -1469,6 +1523,7 @@ select {
   margin: 0 0.5rem;
   color: #b0b0b0;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .footer__icon:hover {
@@ -1499,6 +1554,7 @@ select {
   font-size: 1.3rem;
   color: #b0b0b0;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .footer a:hover {
@@ -1827,6 +1883,11 @@ select {
   font-weight: 500;
   margin: 0;
   text-align: center;
+  transition: color 0.3s ease;
+}
+
+.catalog__price:hover {
+  color: #32493a;
 }
 
 .filter {
@@ -1955,6 +2016,11 @@ select {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.collection-product-card__price:hover {
+  color: #32493a;
 }
 
 .collection-product-card__btn {

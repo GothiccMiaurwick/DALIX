@@ -45,7 +45,6 @@ DALIX/
 ├── index.html          # Página principal
 ├── catalog.html        # Catálogo de productos
 ├── collection.html      # Nueva colección
-├── buys.html          # Página de compra
 ├── style.css          # Estilos principales
 ├── script.js          # Funcionalidad JavaScript
 ├── README.md          # Documentación del proyecto
@@ -72,12 +71,6 @@ DALIX/
 - Grid de productos destacados
 - Sección de características y beneficios
 - Diseño enfocado en la nueva línea
-
-### 🛒 Página de Compra (`buys.html`)
-- Vista detallada del producto
-- Selección de tallas
-- Información de precio y descripción
-- Botón de compra por WhatsApp
 
 ## 🎨 Características de Diseño
 
