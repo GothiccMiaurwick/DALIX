@@ -1910,6 +1910,12 @@ select {
   display: grid !important;
 }
 
+.catalog__grid--grid-2 .catalog__image {
+  width: 100%;
+  max-width: 280px;
+  height: 280px;
+}
+
 .catalog__grid--grid-3 {
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 1.5rem;
@@ -1917,7 +1923,8 @@ select {
 }
 
 .catalog__grid--grid-3 .catalog__image {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: 200px;
 }
 
@@ -1982,8 +1989,15 @@ select {
   }
 
   .catalog__grid--grid-3 .catalog__image {
-    max-width: 180px;
+    width: 100%;
+    max-width: 100%;
     height: 180px;
+  }
+
+  .catalog__grid--grid-2 .catalog__image {
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
   }
 
   .catalog__image {
@@ -1998,8 +2012,15 @@ select {
   }
 
   .catalog__grid--grid-3 .catalog__image {
-    max-width: 220px;
-    height: 220px;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .catalog__grid--grid-2 .catalog__image {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
   }
 
   .catalog__image {
@@ -2023,6 +2044,31 @@ select {
 
   .catalog__grid--list .catalog__price {
     font-size: 1rem;
+  }
+
+  .catalog__grid--grid-3 .catalog__image {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+  }
+}
+
+@media (max-width: 320px) {
+  .catalog__grid--grid-3 .catalog__image {
+    width: 100%;
+    max-width: 100%;
+    height: 160px;
+  }
+
+  .catalog__grid--grid-2 .catalog__image {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+  }
+
+  .catalog__image {
+    max-width: 100%;
+    height: 180px;
   }
 }
 
