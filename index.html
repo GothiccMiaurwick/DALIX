@@ -6,6 +6,14 @@
     <title>DALIX</title>
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Google Fonts - Lora para títulos elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Flaticon Uicons -->
     <link
       rel="stylesheet"
@@ -50,7 +58,6 @@
           <a href="index.html" class="mobile-menu__link">Inicio</a>
           <a href="catalog.html" class="mobile-menu__link">Catálogo</a>
           <a href="collection.html" class="mobile-menu__link"> Colección</a>
-          <a href="buys.html" class="mobile-menu__link">Compras</a>
         </nav>
       </div>
     </div>
@@ -60,19 +67,29 @@
       <div class="search-container">
         <div class="search-box">
           <i class="search-icon fi fi-rs-search"></i>
-          <input type="text" class="search-input" id="search-input" placeholder="BUSCAR..." autocomplete="off">
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="BUSCAR..."
+            autocomplete="off"
+          />
           <button class="search-close" id="search-close">
             <i class="fi fi-sr-cross-small"></i>
           </button>
         </div>
-        
+
         <!-- Search Results -->
         <div class="search-results" id="search-results">
           <div class="search-tabs">
-            <button class="search-tab active" data-tab="productos">PRODUCTOS</button>
-            <button class="search-tab" data-tab="colecciones">COLECCIONES</button>
+            <button class="search-tab active" data-tab="productos">
+              PRODUCTOS
+            </button>
+            <button class="search-tab" data-tab="colecciones">
+              COLECCIONES
+            </button>
           </div>
-          
+
           <div class="search-content">
             <!-- Productos Tab -->
             <div class="search-tab-content active" id="productos-content">
@@ -80,7 +97,7 @@
                 <!-- Los productos se llenarán dinámicamente -->
               </div>
             </div>
-            
+
             <!-- Colecciones Tab -->
             <div class="search-tab-content" id="colecciones-content">
               <div class="search-collections">
@@ -95,7 +112,11 @@
     <!-- Main -->
     <section class="main">
       <a class="main__img" href="catalog.html">
-        <img src="public/img/RopaDalix11.jpg" alt="Colección DALIX" class="main__image" />
+        <img
+          src="public/img/RopaDalix11.jpg"
+          alt="Colección DALIX"
+          class="main__image"
+        />
       </a>
     </section>
 
@@ -103,39 +124,74 @@
     <section class="new-collection">
       <div class="new-collection__container">
         <h2 class="new-collection__title">NUEVA COLECCIÓN</h2>
-        <div class="new-collection__grid">
-          <div class="new-collection__product">
-            <a href="catalog.html" class="new-collection__link">
-              <div class="new-collection__image-container">
-                <img src="public/img/RopaDalix12.jpg" alt="Camiseta DALIX Signature" class="new-collection__image" />
+        <div class="carousel" id="productCarousel">
+          <div class="carousel-content" id="carouselContent">
+            <div class="carousel-item">
+              <div class="new-collection__product">
+                <a href="catalog.html" class="new-collection__link">
+                  <div class="new-collection__image-container">
+                    <img
+                      src="public/img/RopaDalix12.jpg"
+                      alt="Camiseta DALIX Signature"
+                      class="new-collection__image"
+                    />
+                  </div>
+                  <div class="new-collection__info">
+                    <h3 class="new-collection__name">
+                      CAMISETA DALIX SIGNATURE
+                    </h3>
+                    <p class="new-collection__price">$52.000 COP</p>
+                  </div>
+                </a>
               </div>
-              <div class="new-collection__info">
-                <h3 class="new-collection__name">CAMISETA DALIX SIGNATURE</h3>
-                <p class="new-collection__price">$52.000 COP</p>
+            </div>
+            <div class="carousel-item">
+              <div class="new-collection__product">
+                <a href="catalog.html" class="new-collection__link">
+                  <div class="new-collection__image-container">
+                    <img
+                      src="public/img/RopaDalix13.jpg"
+                      alt="Hoodie DALIX Elite"
+                      class="new-collection__image"
+                    />
+                  </div>
+                  <div class="new-collection__info">
+                    <h3 class="new-collection__name">HOODIE DALIX ELITE</h3>
+                    <p class="new-collection__price">$88.000 COP</p>
+                  </div>
+                </a>
               </div>
-            </a>
+            </div>
+            <div class="carousel-item">
+              <div class="new-collection__product">
+                <a href="catalog.html" class="new-collection__link">
+                  <div class="new-collection__image-container">
+                    <img
+                      src="public/img/RopaDalix15.jpg"
+                      alt="Camiseta DALIX Pro"
+                      class="new-collection__image"
+                    />
+                  </div>
+                  <div class="new-collection__info">
+                    <h3 class="new-collection__name">CAMISETA DALIX PRO</h3>
+                    <p class="new-collection__price">$46.000 COP</p>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="new-collection__product">
-            <a href="catalog.html" class="new-collection__link">
-              <div class="new-collection__image-container">
-                <img src="public/img/RopaDalix13.jpg" alt="Hoodie DALIX Elite" class="new-collection__image" />
-              </div>
-              <div class="new-collection__info">
-                <h3 class="new-collection__name">HOODIE DALIX ELITE</h3>
-                <p class="new-collection__price">$88.000 COP</p>
-              </div>
-            </a>
+          
+          <!-- Carousel Navigation -->
+          <div class="carousel-nav">
+            <button class="carousel-btn" id="prevBtn">‹</button>
+            <button class="carousel-btn" id="nextBtn">›</button>
           </div>
-          <div class="new-collection__product">
-            <a href="catalog.html" class="new-collection__link">
-              <div class="new-collection__image-container">
-                <img src="public/img/RopaDalix14.jpg" alt="Camiseta DALIX Pro" class="new-collection__image" />
-              </div>
-              <div class="new-collection__info">
-                <h3 class="new-collection__name">CAMISETA DALIX PRO</h3>
-                <p class="new-collection__price">$46.000 COP</p>
-              </div>
-            </a>
+          
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators" id="carouselIndicators">
+            <button class="carousel-indicator active" data-slide="0"></button>
+            <button class="carousel-indicator" data-slide="1"></button>
+            <button class="carousel-indicator" data-slide="2"></button>
           </div>
         </div>
         <div class="new-collection__cta">
@@ -145,13 +201,22 @@
     </section>
 
     <!-- Hero Brand Section -->
-    <section class="hero-brand" data-product-name="sueter camiseta t-shirt ropa">
+    <section
+      class="hero-brand"
+      data-product-name="sueter camiseta t-shirt ropa"
+    >
       <div class="hero-brand__image">
-        <img src="public/img/RopaDalix11.jpg" alt="DALIX Brand" class="hero-brand__img" />
+        <img
+          src="public/img/RopaDalix18.jpg"
+          alt="DALIX Brand"
+          class="hero-brand__img"
+        />
       </div>
       <div class="hero-brand__content">
         <h2 class="hero-brand__title">𝓓𝓪𝓵𝓲𝔁</h2>
-        <p class="hero-brand__slogan">MAS QUE ROPA, ES UNA HISTORIA QUE VISTES</p>
+        <p class="hero-brand__slogan">
+          MAS QUE ROPA, ES UNA HISTORIA QUE VISTES
+        </p>
       </div>
     </section>
 

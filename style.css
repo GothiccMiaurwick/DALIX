@@ -16,9 +16,14 @@ body {
 
 body {
   line-height: 1.5;
-  font-family: Arial, sans-serif;
+  font-family: 'Courier New', monospace;
   background-color: #f4f4f4;
   color: #222;
+}
+
+/* Fuente elegante para todos los títulos y subtítulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
 }
 
 img,
@@ -88,6 +93,7 @@ select {
 
 .header__logo-text {
   color: #333;
+  font-family: 'Lora', serif;
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -221,6 +227,7 @@ select {
   padding: 1rem 2rem;
   color: #333;
   text-decoration: none;
+  font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   font-weight: 500;
   border-bottom: 1px solid #f0f0f0;
@@ -637,6 +644,7 @@ select {
 }
 
 .search-product-price {
+  font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   color: #666;
   margin: 0;
@@ -791,6 +799,7 @@ select {
 
 .product-purchase__title {
   color: #333;
+  font-family: 'Lora', serif;
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
@@ -798,6 +807,7 @@ select {
 
 .product-purchase__price {
   color: #444;
+  font-family: 'Courier New', monospace;
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
@@ -810,6 +820,7 @@ select {
 
 .product-purchase__description {
   color: #666;
+  font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
@@ -1275,6 +1286,7 @@ select {
 
 .main__text {
   color: #444;
+  font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   text-align: center;
   margin: 0;
@@ -1300,6 +1312,151 @@ select {
   background: #222;
 }
 
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 2rem;
+  width: 300%;
+  justify-content: flex-start;
+}
+
+.carousel-item {
+  flex: 0 0 33.333%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.333%;
+}
+
+.basis-1-3 {
+  flex-basis: 33.333%;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+  background: #222;
+  transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: #333;
+  transform: scale(1.2);
+}
+
+.carousel-indicator:hover {
+  background: #666;
+}
+
+/* Responsive Carousel */
+@media (max-width: 768px) {
+  .carousel {
+    margin: 1.5rem auto;
+  }
+  
+  .carousel-content {
+    width: 200%;
+    gap: 1rem;
+  }
+  
+  .carousel-item {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+  
+  .carousel-nav {
+    margin-top: 1.5rem;
+  }
+  
+  .carousel-indicators {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    margin: 1rem auto;
+  }
+  
+  .carousel-content {
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  
+  .carousel-nav {
+    margin-top: 1rem;
+  }
+  
+  .carousel-indicators {
+    margin-top: 0.8rem;
+  }
+}
+
 /* Nueva Colección Section */
 .new-collection {
   width: 100%;
@@ -1316,6 +1473,7 @@ select {
 .new-collection__title {
   text-align: center;
   color: #333;
+  font-family: 'Lora', serif;
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -1438,6 +1596,7 @@ select {
 
 .new-collection__price {
   color: #999;
+  font-family: 'Courier New', monospace;
   font-size: 0.85rem;
   font-weight: 400;
   margin: 0;
@@ -1523,15 +1682,24 @@ select {
 
 .hero-brand__content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   z-index: 2;
   color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .hero-brand__title {
+  font-family: 'Lora', serif;
   font-size: 4rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
@@ -1562,6 +1730,18 @@ select {
   .hero-brand__slogan {
     font-size: 1rem;
     letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-brand__title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-brand__slogan {
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
   }
 }
 
@@ -1679,6 +1859,7 @@ select {
 
 .footer__title {
   margin-bottom: 0.5rem;
+  font-family: 'Lora', serif;
   font-size: 1.2rem;
   color: #e0e0e0;
 }
@@ -1686,6 +1867,7 @@ select {
 .footer__slogan {
   margin-bottom: 1rem;
   color: #ccc;
+  font-family: 'Courier New', monospace;
 }
 
 .footer__socials {
@@ -1712,11 +1894,12 @@ select {
 
 .footer a {
   display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  align-items: flex-start;
+  gap: 0.4rem;
   justify-content: center;
   color: #e0e0e0;
   text-decoration: none;
+  font-family: 'Courier New', monospace;
   font-size: 1rem;
   margin: 0.3rem 0;
   padding: 0.5rem 1rem;
@@ -1729,6 +1912,8 @@ select {
   color: #b0b0b0;
   transition: color 0.2s;
   cursor: pointer;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
 }
 
 .footer a:hover {
@@ -1748,8 +1933,6 @@ select {
 
 .catalog {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
   background: #f8f8f8;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
@@ -1758,6 +1941,7 @@ select {
 .catalog__title {
   text-align: center;
   color: #444;
+  font-family: 'Lora', serif;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
@@ -1765,7 +1949,7 @@ select {
 .catalog__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 /* Controls Bar */
@@ -1906,7 +2090,7 @@ select {
 /* Grid Views */
 .catalog__grid--grid-2 {
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 2.5rem;
+  gap: 3rem;
   display: grid !important;
 }
 
@@ -1933,20 +2117,20 @@ select {
 
 .catalog__grid--grid-2 .catalog__image {
   width: 100%;
-  max-width: 280px;
-  height: 280px;
+  max-width: 320px;
+  height: 320px;
 }
 
 .catalog__grid--grid-3 {
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 1.5rem;
+  gap: 2rem;
   display: grid !important;
 }
 
 .catalog__grid--grid-3 .catalog__image {
   width: 100%;
-  max-width: 200px;
-  height: 200px;
+  max-width: 250px;
+  height: 250px;
 }
 
 .catalog__grid--list {
@@ -1965,23 +2149,27 @@ select {
 }
 
 .catalog__grid--list .catalog__image {
-  width: 400px;
-  height: 400px;
-  margin-bottom: 2rem;
+  width: 450px;
+  height: 450px;
+  margin-bottom: 1rem;
   margin-right: 0;
 }
 
 .catalog__grid--list .catalog__name {
   text-align: center;
   margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #666;
 }
 
 .catalog__grid--list .catalog__price {
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #888;
 }
 
 /* Responsive Controls Bar */
@@ -2015,26 +2203,26 @@ select {
   .catalog__grid--grid-3 .catalog__image {
     width: 100%;
     max-width: 100%;
-    height: 150px;
+    height: 180px;
   }
 
   .catalog__grid--grid-3 .catalog__card {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1rem;
   }
 
   .catalog__grid--grid-2 .catalog__image {
     width: 100%;
     max-width: 100%;
-    height: 200px;
+    height: 220px;
   }
 
   .catalog__grid--grid-2 .catalog__card {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1rem;
   }
 
   .catalog__image {
     max-width: 100%;
-    height: 250px;
+    height: 280px;
   }
 }
 
@@ -2051,26 +2239,26 @@ select {
   .catalog__grid--grid-3 .catalog__image {
     width: 100%;
     max-width: 100%;
-    height: 160px;
+    height: 180px;
   }
 
   .catalog__grid--grid-3 .catalog__card {
-    padding: 0.8rem 0.3rem;
+    padding: 1rem 0.5rem;
   }
 
   .catalog__grid--grid-2 .catalog__image {
     width: 100%;
     max-width: 100%;
-    height: 160px;
+    height: 200px;
   }
 
   .catalog__grid--grid-2 .catalog__card {
-    padding: 0.8rem 0.3rem;
+    padding: 1rem 0.5rem;
   }
 
   .catalog__image {
     max-width: 100%;
-    height: 200px;
+    height: 220px;
   }
 
   .catalog__grid--list .catalog__card {
@@ -2079,16 +2267,22 @@ select {
   }
 
   .catalog__grid--list .catalog__image {
-    max-width: 280px;
-    height: 280px;
+    max-width: 320px;
+    height: 320px;
   }
 
   .catalog__grid--list .catalog__name {
-    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #666;
   }
 
   .catalog__grid--list .catalog__price {
-    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #888;
   }
 
   .catalog__grid--grid-3 .catalog__image {
@@ -2115,7 +2309,7 @@ select {
   }
 
   .catalog__grid--grid-3 .catalog__card {
-    padding: 0.6rem 0.2rem;
+    padding: 1rem 0.5rem;
   }
 
   .catalog__grid--grid-2 {
@@ -2129,7 +2323,7 @@ select {
   }
 
   .catalog__grid--grid-2 .catalog__card {
-    padding: 0.6rem 0.2rem;
+    padding: 1rem 0.5rem;
   }
 
   .catalog__grid--grid-2 .catalog__image {
@@ -2165,19 +2359,20 @@ select {
 
 .catalog__image {
   width: 100%;
-  max-width: 280px;
-  height: 280px;
+  max-width: 350px;
+  height: 350px;
   object-fit: cover;
   background: #d0d0d0;
   border-radius: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
   display: block;
 }
 
 .catalog__name {
-  color: #333;
-  font-size: 1.1rem;
-  font-weight: 600;
+  color: #666;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: 300;
   margin: 0.5rem 0 0.2rem 0;
   text-align: center;
   word-wrap: break-word;
@@ -2185,9 +2380,10 @@ select {
 }
 
 .catalog__price {
-  color: #666;
-  font-size: 1rem;
-  font-weight: 500;
+  color: #888;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  font-weight: 300;
   margin: 0;
   text-align: center;
   transition: color 0.3s ease;
@@ -2321,6 +2517,7 @@ select {
 
 .collection-product-card__price {
   color: #666;
+  font-family: 'Courier New', monospace;
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
@@ -2369,6 +2566,7 @@ select {
 .collection-pureza__title {
   text-align: center;
   color: #333;
+  font-family: 'Lora', serif;
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -2378,6 +2576,7 @@ select {
 .collection-pureza__description {
   text-align: center;
   color: #666;
+  font-family: 'Courier New', monospace;
   font-size: 1.1rem;
   margin-bottom: 3rem;
   line-height: 1.6;

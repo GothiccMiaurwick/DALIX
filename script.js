@@ -196,6 +196,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
         searchInput.value = ''; // Clear search
         searchResults.classList.remove('show'); // Hide results
+        
+        // Clear search results to prevent any visual artifacts
+        const searchProductsGrid = document.getElementById('search-products-grid');
+        const searchCollectionsGrid = document.querySelector('#colecciones-content .search-collections');
+        
+        if (searchProductsGrid) {
+            searchProductsGrid.innerHTML = '';
+        }
+        if (searchCollectionsGrid) {
+            searchCollectionsGrid.innerHTML = '<p class="no-results">No se encontraron colecciones</p>';
+        }
+        
         showAllProducts(); // Show all products when closing
     }
 
@@ -333,6 +345,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to show all products
     function showAllProducts() {
+        // Show all catalog cards
+        const catalogCards = document.querySelectorAll('.catalog__card');
+        catalogCards.forEach(function(card) {
+            card.style.display = 'flex';
+            card.classList.remove('hidden');
+        });
+        
+        // Also show any products with data-product-name attribute (for compatibility)
         const products = document.querySelectorAll('.product[data-product-name]');
         products.forEach(function(product) {
             product.classList.remove('hidden');
@@ -412,8 +432,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 searchOverlay.classList.remove('has-results');
             }
             
-            // Also filter main page products
-            filterProducts(searchTerm);
+            // Note: Removed filterProducts(searchTerm) call to prevent conflict
+            // The overlay search should only affect the overlay results, not the main catalog
         });
     }
 
@@ -529,209 +549,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Horizontal scroll functionality for Nueva Colección
-    const newCollectionGrid = document.querySelector('.new-collection__grid');
-    
-    if (newCollectionGrid) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        let velocity = 0;
-        let lastTime = 0;
-        let lastScrollLeft = 0;
-        let animationId = null;
-        
-        // Smooth scroll function (Culture Legacy style)
-        function smoothScrollTo(targetScroll) {
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-            }
-            
-            const startScroll = newCollectionGrid.scrollLeft;
-            const distance = targetScroll - startScroll;
-            const duration = 200; // Slightly longer duration like Culture Legacy
-            let startTime = null;
-            
-            function animate(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1);
-                
-                // Easing function similar to Culture Legacy (easeOutQuart)
-                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                
-                newCollectionGrid.scrollLeft = startScroll + (distance * easeOutQuart);
-                
-                if (progress < 1) {
-                    animationId = requestAnimationFrame(animate);
-                }
-            }
-            
-            animationId = requestAnimationFrame(animate);
-        }
-        
-        // Mouse events
-        newCollectionGrid.addEventListener('mousedown', (e) => {
-            isDown = true;
-            newCollectionGrid.classList.add('active');
-            startX = e.pageX - newCollectionGrid.offsetLeft;
-            scrollLeft = newCollectionGrid.scrollLeft;
-            velocity = 0;
-            lastTime = Date.now();
-            lastScrollLeft = scrollLeft;
-            
-            // Cancel any ongoing smooth scroll
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-            }
-            
-            // Prevent text selection while dragging
-            e.preventDefault();
-        });
-        
-        newCollectionGrid.addEventListener('mouseleave', () => {
-            isDown = false;
-            newCollectionGrid.classList.remove('active');
-        });
-        
-        newCollectionGrid.addEventListener('mouseup', () => {
-            isDown = false;
-            newCollectionGrid.classList.remove('active');
-            
-            // Apply momentum scrolling for moderate movements (like Culture Legacy)
-            if (Math.abs(velocity) > 0.8) {
-                applyMomentum();
-            }
-        });
-        
-        newCollectionGrid.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            
-            const currentTime = Date.now();
-            const x = e.pageX - newCollectionGrid.offsetLeft;
-            const walk = (x - startX) * 1.2; // Balanced sensitivity like Culture Legacy
-            newCollectionGrid.scrollLeft = scrollLeft - walk;
-            
-            // Calculate velocity for momentum
-            if (currentTime - lastTime > 0) {
-                velocity = (newCollectionGrid.scrollLeft - lastScrollLeft) / (currentTime - lastTime);
-                lastTime = currentTime;
-                lastScrollLeft = newCollectionGrid.scrollLeft;
-            }
-        });
-        
-        // Touch events for mobile
-        let touchStartX = 0;
-        let touchScrollLeft = 0;
-        let touchVelocity = 0;
-        let touchLastTime = 0;
-        let touchLastScrollLeft = 0;
-        
-        newCollectionGrid.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].pageX;
-            touchScrollLeft = newCollectionGrid.scrollLeft;
-            touchVelocity = 0;
-            touchLastTime = Date.now();
-            touchLastScrollLeft = touchScrollLeft;
-            
-            // Cancel any ongoing smooth scroll
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-            }
-        });
-        
-        newCollectionGrid.addEventListener('touchmove', (e) => {
-            if (!touchStartX) return;
-            e.preventDefault();
-            
-            const currentTime = Date.now();
-            const touchX = e.touches[0].pageX;
-            const walk = (touchStartX - touchX) * 1.2; // Balanced sensitivity like Culture Legacy
-            newCollectionGrid.scrollLeft = touchScrollLeft + walk;
-            
-            // Calculate velocity for momentum
-            if (currentTime - touchLastTime > 0) {
-                touchVelocity = (newCollectionGrid.scrollLeft - touchLastScrollLeft) / (currentTime - touchLastTime);
-                touchLastTime = currentTime;
-                touchLastScrollLeft = newCollectionGrid.scrollLeft;
-            }
-        });
-        
-        newCollectionGrid.addEventListener('touchend', () => {
-            if (Math.abs(touchVelocity) > 0.8) {
-                applyTouchMomentum();
-            }
-            touchStartX = 0;
-        });
-        
-        // Wheel event for smooth scrolling (Culture Legacy style)
-        newCollectionGrid.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            
-            // Cancel any ongoing momentum
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-            }
-            
-            const targetScroll = newCollectionGrid.scrollLeft + (e.deltaY * 0.8); // Balanced wheel sensitivity like Culture Legacy
-            smoothScrollTo(targetScroll);
-        });
-        
-        // Momentum scrolling function (Culture Legacy style)
-        function applyMomentum() {
-            const friction = 0.88; // Balanced friction like Culture Legacy
-            const minVelocity = 0.2; // Moderate threshold
-            const maxDistance = 300; // More generous momentum distance
-            
-            function animate() {
-                if (Math.abs(velocity) < minVelocity) return;
-                
-                const momentumDistance = velocity * 12; // Stronger momentum like Culture Legacy
-                const clampedDistance = Math.max(-maxDistance, Math.min(maxDistance, momentumDistance));
-                
-                newCollectionGrid.scrollLeft += clampedDistance;
-                velocity *= friction;
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-        
-        // Touch momentum scrolling function (Culture Legacy style)
-        function applyTouchMomentum() {
-            const friction = 0.85; // Balanced friction like Culture Legacy
-            const minVelocity = 0.2; // Moderate threshold
-            const maxDistance = 250; // More generous momentum distance
-            
-            function animate() {
-                if (Math.abs(touchVelocity) < minVelocity) return;
-                
-                const momentumDistance = touchVelocity * 10; // Stronger momentum like Culture Legacy
-                const clampedDistance = Math.max(-maxDistance, Math.min(maxDistance, momentumDistance));
-                
-                newCollectionGrid.scrollLeft += clampedDistance;
-                touchVelocity *= friction;
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-        
-        // Add visual feedback on hover
-        newCollectionGrid.addEventListener('mouseenter', () => {
-            newCollectionGrid.style.cursor = 'grab';
-        });
-        
-        newCollectionGrid.addEventListener('mouseleave', () => {
-            if (!isDown) {
-                newCollectionGrid.style.cursor = 'grab';
-            }
-        });
-    }
-
     // Controls Bar - View Toggle Functionality
     const viewButtons = document.querySelectorAll('.controls-bar__view-btn');
     const catalogGrid = document.querySelector('.catalog__grid');
@@ -834,4 +651,87 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Carousel Functionality
+    function initCarousel() {
+        const carousel = document.getElementById('productCarousel');
+        if (!carousel) return;
+
+        const carouselContent = document.getElementById('carouselContent');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.carousel-item').length;
+        
+        function updateCarousel() {
+            const translateX = -currentSlide * 100;
+            carouselContent.style.transform = `translateX(${translateX}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Update button states
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+        
+        // Previous button
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateCarousel();
+                }
+            });
+        }
+        
+        // Next button
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateCarousel();
+                }
+            });
+        }
+        
+        // Indicator clicks
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+        
+        // Auto-play (optional)
+        let autoPlayInterval;
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        // Start auto-play
+        startAutoPlay();
+        
+        // Pause auto-play on hover
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+        
+        // Initialize carousel
+        updateCarousel();
+    }
+    
+    // Initialize carousel
+    initCarousel();
 });
