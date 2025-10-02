@@ -96,7 +96,7 @@ select {
   font-family: 'Lora', serif;
   font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 9px;
   transition: color 0.2s;
 }
 
@@ -191,9 +191,10 @@ select {
 
 .mobile-menu__title {
   color: #333;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
+  letter-spacing: 2px;
 }
 
 .mobile-menu__close {
@@ -203,19 +204,21 @@ select {
   width: 40px;
   height: 40px;
   border: none;
-  background: #e0e0e0;
-  border-radius: 50%;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .mobile-menu__close:hover {
-  background: #c0c0c0;
+  background: #345e2049;
+  border-radius: 50%;
 }
 
 .mobile-menu__close i {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: #333;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .mobile-menu__nav {
@@ -228,8 +231,9 @@ select {
   color: #333;
   text-decoration: none;
   font-family: 'Courier New', monospace;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 500;
+  letter-spacing: 2px;
   border-bottom: 1px solid #f0f0f0;
   transition: background 0.2s, color 0.2s;
 }
@@ -984,12 +988,13 @@ select {
   background: #000;
   color: #fff;
   border: none;
-  border-radius: 0;
-  padding: 0.8rem 1.5rem;
-  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 10rem 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 4px;
+  height: auto;
 }
 
 .product-purchase__btn--secondary:hover {
@@ -1355,8 +1360,8 @@ select {
 }
 
 .carousel-btn {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border: none;
   background: #333;
   color: #fff;
@@ -1366,7 +1371,7 @@ select {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .carousel-btn:hover {
@@ -1390,8 +1395,8 @@ select {
 }
 
 .carousel-indicator {
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #ccc;
   border: none;
@@ -1489,14 +1494,16 @@ select {
   display: inline-block;
   background: #333;
   color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 0;
+  padding: 10rem 1.5rem;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: 4px;
   transition: all 0.3s ease;
   white-space: nowrap;
+  width: 70%;
+  height: auto;
 }
 
 .new-collection__btn:hover {
@@ -1544,7 +1551,7 @@ select {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   cursor: default;
   flex-shrink: 0;
-  width: 280px;
+  width: 350px;
   pointer-events: none;
 }
 
@@ -1587,7 +1594,7 @@ select {
 
 .new-collection__name {
   color: #999;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   font-weight: 400;
   margin: 0 0 0.25rem 0;
   text-align: center;
@@ -1597,7 +1604,7 @@ select {
 .new-collection__price {
   color: #999;
   font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   font-weight: 400;
   margin: 0;
   text-align: center;
@@ -1703,17 +1710,16 @@ select {
   font-size: 4rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-brand__slogan {
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 100;
   margin: 0;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
+  letter-spacing: 10px;
+  line-height: 2;
 }
 
 /* Responsive Design for Hero Brand */
@@ -1741,7 +1747,7 @@ select {
 
   .hero-brand__slogan {
     font-size: 0.9rem;
-    letter-spacing: 0.3px;
+    letter-spacing: 2px;
   }
 }
 
@@ -1815,14 +1821,16 @@ select {
   display: inline-block;
   background: #333;
   color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 0;
+  padding: 10rem 1.5rem;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: 4px;
   transition: all 0.3s ease;
   white-space: nowrap;
+  width: 70%;
+  height: auto;
 }
 
 .catalog-cta__btn:hover {
@@ -2116,9 +2124,11 @@ select {
 }
 
 .catalog__grid--grid-2 .catalog__image {
-  width: 100%;
-  max-width: 320px;
+  width: 320px;
   height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
 }
 
 .catalog__grid--grid-3 {
@@ -2128,9 +2138,10 @@ select {
 }
 
 .catalog__grid--grid-3 .catalog__image {
-  width: 100%;
-  max-width: 250px;
+  width: 250px;
   height: 250px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .catalog__grid--list {
@@ -2151,6 +2162,8 @@ select {
 .catalog__grid--list .catalog__image {
   width: 450px;
   height: 450px;
+  object-fit: cover;
+  object-position: center;
   margin-bottom: 1rem;
   margin-right: 0;
 }
@@ -2201,9 +2214,10 @@ select {
   }
 
   .catalog__grid--grid-3 .catalog__image {
-    width: 100%;
-    max-width: 100%;
+    width: 180px;
     height: 180px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--grid-3 .catalog__card {
@@ -2211,9 +2225,10 @@ select {
   }
 
   .catalog__grid--grid-2 .catalog__image {
-    width: 100%;
-    max-width: 100%;
+    width: 220px;
     height: 220px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--grid-2 .catalog__card {
@@ -2221,8 +2236,10 @@ select {
   }
 
   .catalog__image {
-    max-width: 100%;
+    width: 280px;
     height: 280px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -2237,9 +2254,10 @@ select {
   }
 
   .catalog__grid--grid-3 .catalog__image {
-    width: 100%;
-    max-width: 100%;
+    width: 180px;
     height: 180px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--grid-3 .catalog__card {
@@ -2247,9 +2265,10 @@ select {
   }
 
   .catalog__grid--grid-2 .catalog__image {
-    width: 100%;
-    max-width: 100%;
+    width: 200px;
     height: 200px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--grid-2 .catalog__card {
@@ -2257,8 +2276,10 @@ select {
   }
 
   .catalog__image {
-    max-width: 100%;
+    width: 220px;
     height: 220px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--list .catalog__card {
@@ -2303,9 +2324,10 @@ select {
   }
 
   .catalog__grid--grid-3 .catalog__image {
-    width: 100%;
-    max-width: 100%;
+    width: 140px;
     height: 140px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--grid-3 .catalog__card {
@@ -2317,9 +2339,10 @@ select {
   }
 
   .catalog__grid--grid-2 .catalog__image {
-    width: 100%;
-    max-width: 100%;
+    width: 140px;
     height: 140px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .catalog__grid--grid-2 .catalog__card {
@@ -2337,8 +2360,10 @@ select {
   }
 
   .catalog__image {
-    max-width: 100%;
+    width: 180px;
     height: 180px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -2358,14 +2383,15 @@ select {
 }
 
 .catalog__image {
-  width: 100%;
-  max-width: 350px;
+  width: 350px;
   height: 350px;
   object-fit: cover;
+  object-position: center;
   background: #d0d0d0;
   border-radius: 0;
   margin-bottom: 0.8rem;
   display: block;
+  border-radius: 3px;
 }
 
 .catalog__name {

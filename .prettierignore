@@ -1,0 +1,8 @@
+# Ignore specific files
+# *.min.js
+# *.min.css
+
+# Ignore directories
+# node_modules/
+# dist/
+# build/
