@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
             productElement.className = 'search-product-item';
             
             productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="search-product-image">
+                <img src="${product.image}" alt="${product.name} - Prenda de vestir de la marca DALIX" class="search-product-image">
                 <div class="search-product-info">
                     <h3 class="search-product-name">${product.name}</h3>
                     <p class="search-product-price">
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
             collectionElement.className = 'search-collection-item';
             
             collectionElement.innerHTML = `
-                <img src="${collection.image}" alt="${collection.name}" class="search-collection-image">
+                <img src="${collection.image}" alt="${collection.name} - Colección de prendas de vestir de la marca DALIX" class="search-collection-image">
                 <div class="search-collection-info">
                     <h3 class="search-collection-name">${collection.name}</h3>
                     <p class="search-collection-description">${collection.description}</p>
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="buys.html">
                     <img
                         src="${product.image}"
-                        alt="${product.name}"
+                        alt="${product.name} - Prenda de vestir de la marca DALIX disponible en catálogo"
                         class="catalog__image"
                     />
                 </a>

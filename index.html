@@ -26,14 +26,14 @@
     <!-- Header -->
     <section class="header">
       <div class="header__content">
-        <a href="#" class="header__search" id="search-toggle">
-          <i class="header__icon fi fi-rs-search"></i>
+        <a href="#" class="header__search" id="search-toggle" aria-label="Abrir búsqueda de productos">
+          <i class="header__icon fi fi-rs-search" aria-hidden="true"></i>
         </a>
         <a href="index.html" class="header__logo">
-          <img src="public/img/logo.png" alt="DALIX Logo" class="header__logo-img" />
+          <img src="public/img/logo.png" alt="Logo de la marca DALIX - Empresa de ropa y prendas de vestir" class="header__logo-img" />
         </a>
-        <a href="#" class="header__menu" id="menu-toggle">
-          <i class="header__icon fi fi-sr-menu-burger"></i>
+        <a href="#" class="header__menu" id="menu-toggle" aria-label="Abrir menú de navegación">
+          <i class="header__icon fi fi-sr-menu-burger" aria-hidden="true"></i>
         </a>
       </div>
     </section>
@@ -44,8 +44,8 @@
       <div class="mobile-menu__content">
         <div class="mobile-menu__header">
           <h3 class="mobile-menu__title">Menú</h3>
-          <button class="mobile-menu__close" id="menu-close">
-            <i class="fi fi-sr-cross-small"></i>
+          <button class="mobile-menu__close" id="menu-close" aria-label="Cerrar menú de navegación">
+            <i class="fi fi-sr-cross-small" aria-hidden="true"></i>
           </button>
         </div>
         <nav class="mobile-menu__nav">
@@ -60,10 +60,10 @@
     <div class="search-overlay" id="search-overlay">
       <div class="search-container">
         <div class="search-box">
-          <i class="search-icon fi fi-rs-search"></i>
+          <i class="search-icon fi fi-rs-search" aria-hidden="true"></i>
           <input type="text" class="search-input" id="search-input" placeholder="BUSCAR..." autocomplete="off" />
-          <button class="search-close" id="search-close">
-            <i class="fi fi-sr-cross-small"></i>
+          <button class="search-close" id="search-close" aria-label="Cerrar búsqueda">
+            <i class="fi fi-sr-cross-small" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -96,7 +96,7 @@
     <!-- Main -->
     <section class="main">
       <a class="main__img" href="catalog.html">
-        <img src="public/img/RopaDalix11.jpg" alt="Colección DALIX" class="main__image" />
+        <img src="public/img/RopaDalix11.jpg" alt="Imagen principal de la colección DALIX mostrando prendas de vestir de la marca" class="main__image" />
       </a>
     </section>
 
@@ -114,7 +114,7 @@
                   <div class="new-collection__image-container">
                     <img
                       src="public/img/RopaDalix12.jpg"
-                      alt="Camiseta DALIX Signature"
+                      alt="Camiseta DALIX Signature - Prenda de vestir con diseño exclusivo de la marca"
                       class="new-collection__image" />
                   </div>
                   <div class="new-collection__info">
@@ -128,7 +128,7 @@
               <div class="new-collection__product">
                 <a href="catalog.html" class="new-collection__link">
                   <div class="new-collection__image-container">
-                    <img src="public/img/RopaDalix13.jpg" alt="Hoodie DALIX Elite" class="new-collection__image" />
+                    <img src="public/img/RopaDalix13.jpg" alt="Hoodie DALIX Elite - Sudadera con capucha de la línea premium de la marca" class="new-collection__image" />
                   </div>
                   <div class="new-collection__info">
                     <h3 class="new-collection__name">HOODIE DALIX ELITE</h3>
@@ -141,7 +141,7 @@
               <div class="new-collection__product">
                 <a href="catalog.html" class="new-collection__link">
                   <div class="new-collection__image-container">
-                    <img src="public/img/RopaDalix15.jpg" alt="Camiseta DALIX Pro" class="new-collection__image" />
+                    <img src="public/img/RopaDalix15.jpg" alt="Camiseta DALIX Pro - Prenda de vestir profesional con diseño moderno de la marca" class="new-collection__image" />
                   </div>
                   <div class="new-collection__info">
                     <h3 class="new-collection__name">CAMISETA DALIX PRO</h3>
@@ -154,15 +154,15 @@
 
           <!-- Carousel Navigation -->
           <div class="carousel-nav">
-            <button class="carousel-btn" id="prevBtn">‹</button>
-            <button class="carousel-btn" id="nextBtn">›</button>
+            <button class="carousel-btn" id="prevBtn" aria-label="Ver producto anterior">‹</button>
+            <button class="carousel-btn" id="nextBtn" aria-label="Ver producto siguiente">›</button>
           </div>
 
           <!-- Carousel Indicators -->
           <div class="carousel-indicators" id="carouselIndicators">
-            <button class="carousel-indicator active" data-slide="0"></button>
-            <button class="carousel-indicator" data-slide="1"></button>
-            <button class="carousel-indicator" data-slide="2"></button>
+            <button class="carousel-indicator active" data-slide="0" aria-label="Ir al producto 1 de 3"></button>
+            <button class="carousel-indicator" data-slide="1" aria-label="Ir al producto 2 de 3"></button>
+            <button class="carousel-indicator" data-slide="2" aria-label="Ir al producto 3 de 3"></button>
           </div>
         </div>
         <h2 class="new-collection__title">NUEVA COLECCIÓN</h2>
@@ -172,7 +172,7 @@
     <!-- Hero Brand Section -->
     <section class="hero-brand" data-product-name="sueter camiseta t-shirt ropa">
       <div class="hero-brand__image">
-        <img src="public/img/RopaDalix18.jpg" alt="DALIX Brand" class="hero-brand__img" />
+        <img src="public/img/RopaDalix18.jpg" alt="Imagen de marca DALIX mostrando la identidad visual y estilo de la empresa de ropa" class="hero-brand__img" />
       </div>
       <div class="hero-brand__content">
         <h2 class="hero-brand__title">𝓓𝓪𝓵𝓲𝔁</h2>
@@ -192,24 +192,32 @@
       <h3 class="footer__title">D A L I X</h3>
 
       <div class="footer__socials">
-        <i class="footer__icon fi fi-brands-facebook"></i>
-        <i class="footer__icon fi fi-brands-instagram"></i>
-        <i class="footer__icon fi fi-brands-twitter-alt-circle"></i>
-        <i class="footer__icon fi fi-brands-pinterest"></i>
+        <a href="#" class="footer__social-link" aria-label="Síguenos en Facebook">
+          <i class="footer__icon fi fi-brands-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Síguenos en Instagram">
+          <i class="footer__icon fi fi-brands-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Síguenos en Twitter">
+          <i class="footer__icon fi fi-brands-twitter-alt-circle" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Síguenos en Pinterest">
+          <i class="footer__icon fi fi-brands-pinterest" aria-hidden="true"></i>
+        </a>
       </div>
 
-      <a href="#">
-        <i class="fi fi-sr-marker"></i>
+      <a href="#" aria-label="Nuestra ubicación">
+        <i class="fi fi-sr-marker" aria-hidden="true"></i>
         <p>Calle 5g#48-64 Barrio La Nevada</p>
       </a>
 
-      <a href="#">
-        <i class="fi fi-brands-whatsapp-circle"></i>
+      <a href="#" aria-label="Contáctanos por WhatsApp">
+        <i class="fi fi-brands-whatsapp-circle" aria-hidden="true"></i>
         <p>+57 800 000 000</p>
       </a>
 
-      <a href="#">
-        <i class="fi fi-rr-envelope"></i>
+      <a href="#" aria-label="Envíanos un correo electrónico">
+        <i class="fi fi-rr-envelope" aria-hidden="true"></i>
         <p>dalixprendas@gmail.com</p>
       </a>
     </footer>
