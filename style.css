@@ -746,11 +746,11 @@ select {
   }
 
   .new-collection__product {
-    width: 220px;
+    width: 380px;
   }
 
   .new-collection__image {
-    height: 220px;
+    height: 280px;
   }
 
   .new-collection__name {
@@ -2285,52 +2285,6 @@ select {
   color: #32493a;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .new-collection {
-    padding: 1.5rem 0;
-  }
-
-  .new-collection__container {
-    padding: 0 1rem;
-  }
-
-  .new-collection__title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .new-collection__cta {
-    margin-top: 1.5rem;
-  }
-
-  .new-collection__btn {
-    font-size: 0.8rem;
-    padding: 1rem 1.2rem;
-  }
-
-  .new-collection__grid {
-    gap: 1rem;
-    padding: 0.5rem 0;
-  }
-
-  .new-collection__product {
-    width: 30%;
-  }
-
-  .new-collection__image {
-    height: 480px;
-    border-radius: 5px;
-  }
-
-  .new-collection__image-container {
-    padding: 0.8rem;
-  }
-
-  .new-collection__info {
-    padding: 0.25rem 0;
-  }
-}
 
 /* Hero Brand Section */
 .hero-brand {
@@ -3424,8 +3378,8 @@ select {
   }
 
   .catalog-cta__btn {
-    font-size: 1rem;
-    padding: 2rem 0.5rem;
+    font-size: .6rem;
+    padding: 1rem 0.5rem;
     width: 95%;
   }
 
